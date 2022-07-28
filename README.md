@@ -11,6 +11,7 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 1. open your browser, postman, or similar and test out the endpoints!
 
 **By default, there are 10 users with IDs 1-10**
+**Users will have a random number of subscriptions auto-generated, use the enpoint below to get a subscription ID if needed**
 
 ## Endpoints
 
