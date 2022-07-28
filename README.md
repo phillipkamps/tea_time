@@ -4,11 +4,11 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 
 ### To get started:
 1. clone this repo
-2. cd into the app's directory 
-3. in the cli, run ```bundle```
-4. in the cli, run ```rails db:{drop,create,migrate,seed}```
-5. in the cli , run ```rails s```
-6. open your browser, postman, or similar and test out the endpoints!
+1. cd into the app's directory 
+1. in the cli, run ```bundle```
+1. in the cli, run ```rails db:{drop,create,migrate,seed}```
+1. in the cli , run ```rails s```
+1. open your browser, postman, or similar and test out the endpoints!
 
 **By default, there are 10 users with IDs 1-10**
 
