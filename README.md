@@ -1,24 +1,37 @@
-# README
+# Welcome to Tea Time!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton service.
 
-Things you may want to cover:
+To get started:
+1. clone this repo
+2. cd into the app's directory 
+3. in the cli, run ```bundle```
+4. in the cli, run ```rails db:{drop,create,migrate,seed}```
+5. in the cli , run ```rails s```
+3. open your browser, postman, or similar and test out the endpoints!
 
-* Ruby version
+By default, there are 10 users with IDs 1-10
 
-* System dependencies
+Endpoints:
 
-* Configuration
+Create a subscription for a customer to a tea
+```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
 
-* Database creation
+Update a subscription
+```http://localhost:3000/api/v1/subscriptions/[insert subscription id]```
 
-* Database initialization
+* When sending a patch request, a body needs to be sent in JSON format with the attributes you wish to update, e.g:
+  ```{
+    "status": "Cancelled"
+   }```
+   
+Get a list of all subscriptions for a customer
+```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
 
-* How to run the test suite
+For the curious:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby 2.7.2
+* Rails 5.2.8.1
 
-* Deployment instructions
-
-* ...
+* To run test suite: ```bundle exec rspec```
+* To view test coverage: ```open coverage/index.html
