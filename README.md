@@ -21,9 +21,11 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 ```http://localhost:3000/api/v1/subscriptions/[insert subscription id]```
 
 When sending a patch request, a body needs to be sent in JSON format with the attributes you wish to update, e.g:
-```{
+```
+{
   "status": "Cancelled"
-    }```
+}
+ ```
    
 ### Get a list of all subscriptions for a customer
 ```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
