@@ -27,7 +27,7 @@ ________________________________________________________________________________
   "frequency": 'Monthly'
 }
 ```
-* subscription title will be auto-generated
+* subscription title will be auto-generated, and status will be set to "Active" upon creation
 ### Update a subscription
 ```http://localhost:3000/api/v1/subscriptions/[INSERT SUBSCRIPTION ID]```
 
