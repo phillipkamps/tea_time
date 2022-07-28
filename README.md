@@ -34,7 +34,7 @@ When sending a patch request, a body needs to be sent in JSON format with the at
 ___________________________________________________________________________________________________________________________________________________________
 
 
-#### For the curious
+#### For the curious:
 
 * Ruby 2.7.2
 * Rails 5.2.8.1
