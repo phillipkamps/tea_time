@@ -35,4 +35,4 @@ When sending a patch request, a body needs to be sent in JSON format with the at
 * Rails 5.2.8.1
 
 * To run test suite: ```bundle exec rspec```
-* To view test coverage: ```open coverage/index.html
+* To view test coverage: ```open coverage/index.html```
