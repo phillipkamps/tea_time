@@ -10,24 +10,33 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 1. in the cli , run ```rails s```
 1. open your browser, postman, or similar and test out the endpoints!
 ___________________________________________________________________________________________________________________________________________________________
-**By default, there are 10 users with IDs 1-10**
+**By default, there are 10 users with IDs 1-10, each user has a random number of subscriptions to a random number of teas (1-5)**
 
-**Users will have a random number of subscriptions auto-generated, use the enpoint below to get a subscription ID if needed**
+**Use the enpoint below to get subscription/ tea IDs if needed**
 ___________________________________________________________________________________________________________________________________________________________
 ## Endpoints
 
 ### Create a subscription for a customer to a tea
-```http://localhost:3000/api/v1/customers/[INSERT CUSTOMER ID]/subscriptions```
+```http://localhost:3000/api/v1/customers/[INSERT CUSTOMER ID]/subscriptions/[INSERT TEA ID]```
 
+* When sending a post request, a body MUST be sent in JSON format with the following attribute(s) you wish the subscription to have, e.g:
+```
+{
+  "price": '4.99',
+  "status": 'Active',
+  "frequency": 'Monthly'
+}
+```
+* subscription title will be auto-generated
 ### Update a subscription
-  ```http://localhost:3000/api/v1/subscriptions/[INSERT SUBSCRIPTION ID]```
+```http://localhost:3000/api/v1/subscriptions/[INSERT SUBSCRIPTION ID]```
 
-  * When sending a patch request, a body needs to be sent in JSON format with the attribute(s) you wish to update, e.g:
-  ```
-  {
-   "status": "Cancelled"
-  }
-   ```
+* When sending a patch request, a body needs to be sent in JSON format with the attribute(s) you wish to update, e.g:
+```
+{
+  "status": "Cancelled"
+}
+```
    
 ### Get a list of all subscriptions for a customer
 ```http://localhost:3000/api/v1/customers/[INSERT CUSTOMER ID]/subscriptions```
