@@ -37,6 +37,7 @@ describe 'Tea Time API' do
       customer_id: customer.id
     }
     headers = { 'CONTENT_TYPE' => 'application/json' }
+
     post "/api/v1/customers/#{customer.id}/subscriptions/#{tea.id}",
          headers: headers,
          params: JSON.generate(subscription: subscription_params)
@@ -49,8 +50,20 @@ describe 'Tea Time API' do
     }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
-    patch "/api/v1/customers/#{customer.id}/subscriptions/#{Subscription.last.id}", headers: headers,
-                                                                                    params: JSON.generate(subscription: update_status_params)
-    binding.pry
+    patch "/api/v1/customers/#{customer.id}/subscriptions/#{Subscription.last.id}",
+          headers: headers,
+          params: JSON.generate(update_status_params)
+
+    expect(response).to be_successful
+
+    new_status = Subscription.last.status
+    expect(new_status).to_not eq previous_status
+
+    subscription_json = JSON.parse(response.body, symbolize_names: true)[:data]
+    expect(subscription_json[:type]).to eq 'subscription'
+    expect(subscription_json[:attributes].count).to eq 6
+    expect(subscription_json[:attributes][:status]).to eq 'Cancelled'
+    expect(subscription_json[:attributes][:customer_id]).to eq customer.id
+    expect(subscription_json[:attributes][:tea_id]).to eq tea.id
   end
 end
