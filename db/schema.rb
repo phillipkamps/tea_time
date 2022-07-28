@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_07_26_170153) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "title"
-    t.string "price"
+    t.float "price"
     t.string "status"
     t.string "frequency"
     t.bigint "customer_id"
