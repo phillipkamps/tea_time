@@ -12,7 +12,7 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 
 By default, there are 10 users with IDs 1-10
 
-##Endpoints
+## Endpoints
 
 ### Create a subscription for a customer to a tea
 ```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
