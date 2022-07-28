@@ -10,7 +10,7 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 5. in the cli , run ```rails s```
 6. open your browser, postman, or similar and test out the endpoints!
 
-By default, there are 10 users with IDs 1-10
+**By default, there are 10 users with IDs 1-10**
 
 ## Endpoints
 
