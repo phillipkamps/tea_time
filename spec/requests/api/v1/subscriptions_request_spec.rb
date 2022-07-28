@@ -50,7 +50,7 @@ describe 'Tea Time API' do
     }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
-    patch "/api/v1/customers/#{customer.id}/subscriptions/#{Subscription.last.id}",
+    patch "/api/v1/subscriptions/#{Subscription.last.id}",
           headers: headers,
           params: JSON.generate(update_status_params)
 

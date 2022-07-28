@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   post '/api/v1/customers/:customer_id/subscriptions/:tea_id', to: 'api/v1/subscriptions#create'
 
-  patch '/api/v1/customers/:customer_id/subscriptions/:subscription_id', to: 'api/v1/subscriptions#update'
+  patch '/api/v1/subscriptions/:subscription_id', to: 'api/v1/subscriptions#update'
 end
