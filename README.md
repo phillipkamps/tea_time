@@ -31,7 +31,10 @@ When sending a patch request, a body needs to be sent in JSON format with the at
 ```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
 
 
-#### For the curious:
+___________________________________________________________________________________________________________________________________________________________
+
+
+#### For the curious
 
 * Ruby 2.7.2
 * Rails 5.2.8.1
