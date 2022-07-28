@@ -12,12 +12,12 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 
 By default, there are 10 users with IDs 1-10
 
-Endpoints:
+##Endpoints
 
-## Create a subscription for a customer to a tea
+### Create a subscription for a customer to a tea
 ```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
 
-## Update a subscription
+### Update a subscription
 ```http://localhost:3000/api/v1/subscriptions/[insert subscription id]```
 
 When sending a patch request, a body needs to be sent in JSON format with the attributes you wish to update, e.g:
@@ -25,11 +25,11 @@ When sending a patch request, a body needs to be sent in JSON format with the at
   "status": "Cancelled"
     }```
    
-## Get a list of all subscriptions for a customer
+### Get a list of all subscriptions for a customer
 ```http://localhost:3000/api/v1/customers/[insert customer id]/subscriptions```
 
 
-### For the curious:
+#### For the curious:
 
 * Ruby 2.7.2
 * Rails 5.2.8.1
