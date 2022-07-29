@@ -6,12 +6,8 @@ describe 'Tea Time API' do
 
   it 'creates a subscription to a tea for a customer' do
     subscription_params = {
-      title: "#{customer.first_name}'s #{tea.name} Subscription",
       price: '4.99',
-      status: 'Active',
-      frequency: 'Monthly',
-      tea_id: tea.id,
-      customer_id: customer.id
+      frequency: 'Monthly'
     }
     headers = { 'CONTENT_TYPE' => 'application/json' }
     post "/api/v1/customers/#{customer.id}/subscriptions/#{tea.id}",
@@ -29,12 +25,8 @@ describe 'Tea Time API' do
 
   it 'updates status of subscription' do
     subscription_params = {
-      title: "#{customer.first_name}'s #{tea.name} Subscription",
       price: '4.99',
-      status: 'Active',
-      frequency: 'Monthly',
-      tea_id: tea.id,
-      customer_id: customer.id
+      frequency: 'Monthly'
     }
     headers = { 'CONTENT_TYPE' => 'application/json' }
 
@@ -57,6 +49,7 @@ describe 'Tea Time API' do
     expect(response).to be_successful
 
     current_status = Subscription.last.status
+
     expect(current_status).to_not eq previous_status
 
     subscription_json = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -71,10 +64,9 @@ describe 'Tea Time API' do
   it 'gets all subscriptions for a customer' do
     tea_list = create_list(:tea, 5)
     subscription_list = tea_list.map do |tea|
-      create(:subscription,
-             { customer_id: customer.id,
-               tea_id: tea.id,
-               title: "#{customer.first_name}'s #{tea.name} Subscription" })
+      create(:subscription, { customer_id: customer.id,
+                              tea_id: tea.id,
+                              title: "#{customer.first_name}'s #{tea.name} Subscription" })
     end
 
     get "/api/v1/customers/#{customer.id}/subscriptions"
