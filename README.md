@@ -9,6 +9,7 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 1. in the cli, run ```rails db:{drop,create,migrate,seed}```
 1. in the cli , run ```rails s```
 1. open your browser, postman, or similar and test out the endpoints!
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/20803614-1cb9543f-41ad-45cd-840b-1e7e96c46717?action=collection%2Ffork&collection-url=entityId%3D20803614-1cb9543f-41ad-45cd-840b-1e7e96c46717%26entityType%3Dcollection%26workspaceId%3D34d055cc-c6e6-46f0-880d-1f3e1fee4841)
 ___________________________________________________________________________________________________________________________________________________________
 **By default, there are 10 users with IDs 1-10, each user has a random number of subscriptions to a random number of teas (1-5)**
 
