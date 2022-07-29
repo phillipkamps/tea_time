@@ -2,9 +2,13 @@ class Api::V1::SubscriptionsController < ApplicationController
   def create
     @customer = Customer.find(params[:customer_id])
     @tea = Tea.find(params[:tea_id])
-    @subscription = @customer.subscriptions.new(subscription_params)
-    @subscription.update(title: "#{@customer.first_name}'s #{@tea.name} Subscription",
-                         status: 'Active')
+    @subscription = Subscription.new(tea_id: @tea.id, customer_id: @customer.id)
+    @subscription.update(
+      title: "#{@customer.first_name}'s #{@tea.name} Subscription",
+      price: subscription_params[:price],
+      frequency: subscription_params[:frequency],
+      status: 'Active'
+    )
     @subscription.save
     render json: SubscriptionSerializer.new(@subscription), status: :created
   end
@@ -23,6 +27,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:price, :frequency, :tea_id, :status)
+    params.require(:subscription).permit(:price, :frequency, :status)
   end
 end
