@@ -22,9 +22,8 @@ ________________________________________________________________________________
 * When sending a post request, a body MUST be sent in JSON format with the following attribute(s) you wish the subscription to have, e.g:
 ```
 {
-  "price": '4.99',
-  "status": 'Active',
-  "frequency": 'Monthly'
+  "price": "4.99",
+  "frequency": "Monthly"
 }
 ```
 * subscription title will be auto-generated, and status will be set to "Active" upon creation
