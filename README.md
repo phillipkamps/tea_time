@@ -4,7 +4,7 @@ This 'lil backend app exposes 3 endpoints for a fictional tea subscripiton servi
 
 ### To get started:
 1. clone this repo
-1. cd into the app's directory 
+1. cd into the app's root directory 
 1. in the cli, run ```bundle```
 1. in the cli, run ```rails db:{drop,create,migrate,seed}```
 1. in the cli , run ```rails s```
